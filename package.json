@@ -1,0 +1,47 @@
+{
+  "name": "verntage",
+  "version": "0.1.0",
+  "description": "Preset vertical writing-mode style sheets",
+  "main": "index.js",
+  "scripts": {
+    "test": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ethantw/verntage.git"
+  },
+  "keywords": [
+    "vertical",
+    "writing-mode",
+    "CSS",
+    "CJK"
+  ],
+  "author": "Chen Yijun (@ethantw)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ethantw/verntage/issues"
+  },
+  "homepage": "https://github.com/ethantw/verntage",
+  "dependencies": {
+    "han-css": "^3.2.3"
+  },
+  "devDependencies": {
+    "livescript": "~1.4.0",
+    "babelify": "^6.0.2",
+    "browserify": "^10.1.0",
+    "cheerio": "^0.19.0",
+    "gulp": "^3.8.11",
+    "gulp-babel": "^5.1.0",
+    "gulp-concat-util": "^0.5.2",
+    "gulp-cssmin": "^0.1.7",
+    "gulp-gh-pages": "^0.5.1",
+    "gulp-live-server": "0.0.14",
+    "gulp-remarkable": "^1.1.2",
+    "gulp-stylus": "^2.0.1",
+    "gulp-uglify": "^1.2.0",
+    "gulp-uglifyjs": "^0.6.2",
+    "gulp-watch": "^4.2.4",
+    "vinyl-source-stream": "^1.1.0",
+    "vinyl-transform": "^1.0.0"
+  }
+}

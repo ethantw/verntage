@@ -1,0 +1,29 @@
+
+$vern-dft ?= true
+
+$vern-selector ?= {
+  container: $vern-dft ? body : '',
+  selector:  $vern-dft ? article : ''
+}
+
+vern( $selector=article )
+  &
+    @extend $vern-container
+  {$selector}
+    @extend $vern
+$vern-container
+  // typography
+  direction rtl
+$vern
+  // box-model
+  overflow-x auto
+  overflow-y hidden 
+  // typography
+  -ms-writing-mode tb-rl 
+  -webkit-writing-mode vertical-rl
+  writing-mode tb-rl
+  direction ltr
+    
+{$vern-selector['container']}
+  vern( $vern-selector['selector'] )
+

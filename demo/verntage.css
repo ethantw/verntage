@@ -1,0 +1,11 @@
+body {
+  direction: rtl;
+}
+body article {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -ms-writing-mode: tb-rl;
+  -webkit-writing-mode: vertical-rl;
+  writing-mode: tb-rl;
+  direction: ltr;
+}

@@ -26,7 +26,6 @@
     "han-css": "^3.2.3"
   },
   "devDependencies": {
-    "livescript": "~1.4.0",
     "babelify": "^6.0.2",
     "browserify": "^10.1.0",
     "cheerio": "^0.19.0",
@@ -35,12 +34,14 @@
     "gulp-concat-util": "^0.5.2",
     "gulp-cssmin": "^0.1.7",
     "gulp-gh-pages": "^0.5.1",
+    "gulp-jade": "^1.0.1",
     "gulp-live-server": "0.0.14",
     "gulp-remarkable": "^1.1.2",
     "gulp-stylus": "^2.0.1",
     "gulp-uglify": "^1.2.0",
     "gulp-uglifyjs": "^0.6.2",
     "gulp-watch": "^4.2.4",
+    "livescript": "~1.4.0",
     "vinyl-source-stream": "^1.1.0",
     "vinyl-transform": "^1.0.0"
   }

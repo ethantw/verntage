@@ -49,6 +49,9 @@ gulp.task \styl ->
     .pipe gulp-stylus!
     .pipe concat \verntage.css
     .pipe dest demo
+  src \./src/styl/demo.styl
+    .pipe gulp-stylus!
+    .pipe dest demo
 
 gulp.task \jade ->
   src \./md/**/*.jade

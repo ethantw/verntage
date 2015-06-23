@@ -25,9 +25,9 @@ const charset = '@charset "UTF-8";\n'
 const han-version = pkg.dependencies.['han-css'].replace( /^[\^\~]/, '' )
 
 try
-  template = fs.readFileSync \./md/template.html, encoding: \utf-8 .split '{{content}}'
+  template = fs.readFileSync \./md/template.html, encoding: \utf-8
 catch e
-  template = new Array( 2 )
+  template = ''
 
 src = gulp.src
 dest = gulp.dest
@@ -62,16 +62,15 @@ gulp.task \md ->
   fs.readdirSync( \./md/ )
   .filter ( fn ) -> /\.md$/i.test fn
   .forEach ( fn ) ->
-    html = fn.replace( /\.md$/i, \.html )
+    fn-html = fn.replace( /\.md$/i, \.html )
     src "./md/**/#{fn}"
       .pipe gulp-remarkable preset: \commonmark
-      .pipe concat.header template.0
-      .pipe concat.footer template.1
-      .pipe concat html, {
+      .pipe concat fn-html, {
         process: ( src ) ->
-          $ = cheerio.load src
+          html = template.replace( '{{content}}', src )
+          $ = cheerio.load html
           title = $( 'h1:first-of-type' ).text()
-          src.replace /\{\{title\}\}/gi, title
+          html.replace /\{\{title\}\}/gi, title
       }
       .pipe dest demo
 

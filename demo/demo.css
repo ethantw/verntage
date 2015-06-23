@@ -1,13 +1,21 @@
-article {
-  margin: 3em 0;
+#wrap {
+  margin: 3em 3em 3em 1em;
   height: 30em;
+  padding: 0.8em 0.8em 1.5em;
+  background-color: #f5f5f5;
+  border: 5px solid #e9e9e9;
+  border-radius: 1em;
 }
-li h4,
-li h5,
-li h6,
-li p {
-  margin: 0;
+#wrap article {
+  padding: 0.5em 0 0.5em 10em;
 }
-li p {
+#wrap article ul,
+#wrap article ol {
+  padding-top: 0;
+}
+#wrap article li h4 + p:first-of-type {
+  margin-right: -1.5em;
+}
+#wrap article li p {
   margin-bottom: 0.5em;
 }

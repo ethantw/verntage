@@ -1,8 +1,16 @@
 
+npm( $mod )
+  '../../node_modules/' + $mod
+
+$han-font-path = '//cdnjs.cloudflare.com/ajax/libs/Han/3.2.3/font/'
+
+@import npm( 'han-css' )
+@import 'dir'
+
 $vern-dft ?= true
 
 $vern-selector ?= {
-  container: $vern-dft ? body : '',
+  container: $vern-dft ? '#wrap' : '',
   selector:  $vern-dft ? article : ''
 }
 
@@ -11,19 +19,21 @@ vern( $selector=article )
     @extend $vern-container
   {$selector}
     @extend $vern
+
 $vern-container
-  // typography
-  direction rtl
-$vern
   // box-model
   overflow-x auto
   overflow-y hidden 
   // typography
-  -ms-writing-mode tb-rl 
-  -webkit-writing-mode vertical-rl
-  writing-mode tb-rl
+  direction rtl
+$vern
+  @extend $vern-dir
+  // typography
   direction ltr
-    
+  -ms-writing-mode     tb-rl 
+  -webkit-writing-mode vertical-rl
+  writing-mode         tb-rl
+
 {$vern-selector['container']}
   vern( $vern-selector['selector'] )
 

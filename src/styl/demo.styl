@@ -1,15 +1,23 @@
 
-article
+#wrap
   // position
-  margin 3em 0
+  margin 3em 3em 3em 1em
   // box-model
   height 30em
+  padding .8em .8em 1.5em
+  // style
+  background-color #f5f5f5
+  border 5px solid darken( @background-color, 5% )
+  border-radius 1em
 
-li h4,
-li h5,
-li h6,
-li p
-  margin 0
-li p
-  margin-bottom .5em
+#wrap article
+  padding .5em 0 .5em 10em
+
+  ul,
+  ol
+    padding-top 0
+  li h4 + p:first-of-type
+    margin-right -1.5em
+  li p
+    margin-bottom .5em
 

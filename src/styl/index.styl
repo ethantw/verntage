@@ -3,6 +3,8 @@ npm( $mod )
   '../../node_modules/' + $mod
 
 $han-font-path = '//cdnjs.cloudflare.com/ajax/libs/Han/3.2.3/font/'
+$han-biaodian-hant = Pro
+$han-hanging-hant  = true
 
 @import npm( 'han-css' )
 @import 'dir'
@@ -33,6 +35,16 @@ $vern
   -ms-writing-mode     tb-rl 
   -webkit-writing-mode vertical-rl
   writing-mode         tb-rl
+  -ms-text-combine-horizontal     digits 2
+  -webkit-text-combine-horizontal digits 2
+  text-combine-horizontal         digits 2
+
+  h-char[unicode='ff1a']
+    direction rtl
+    -ms-writing-mode     rl-tb
+    -webkit-writing-mode horizontal-tb
+    writing-mode         rl-tb
+    margin -.25em 0
 
 {$vern-selector['container']}
   vern( $vern-selector['selector'] )

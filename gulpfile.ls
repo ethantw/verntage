@@ -27,7 +27,7 @@ const han-version = pkg.dependencies.['han-css'].replace( /^[\^\~]/, '' )
 try
   template = fs.readFileSync \./md/template.html, encoding: \utf-8
 catch e
-  template = ''
+  template = '{{content}}'
 
 src = gulp.src
 dest = gulp.dest
@@ -42,7 +42,7 @@ gulp.task \server !->
 
 gulp.task \dev <[ watch server ]>
 gulp.task \www <[ jade md build ]>
-gulp.task \build <[ styl ]>
+gulp.task \build <[ styl js ]>
 
 gulp.task \styl ->
   src \./src/styl/index.styl
@@ -51,6 +51,16 @@ gulp.task \styl ->
     .pipe dest demo
   src \./src/styl/demo.styl
     .pipe gulp-stylus!
+    .pipe dest demo
+
+gulp.task \js ->
+  browserify {
+    entries: \./src/js/index.js
+    debug: yes
+  }
+    .transform babelify
+    .bundle!
+    .pipe source \verntage.js
     .pipe dest demo
 
 gulp.task \jade ->
@@ -76,6 +86,7 @@ gulp.task \md ->
 
 gulp.task \watch <[ www ]> ->
   gulp.watch \./src/styl/**/*.styl <[ styl ]>
+  gulp.watch \./src/js/**/*.js <[ js ]>
   gulp.watch \./md/**/*.jade <[ jade ]>
   gulp.watch \./md/**/*.md <[ md ]>
 

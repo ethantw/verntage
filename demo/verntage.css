@@ -1302,7 +1302,7 @@ html:lang(zh-Hant),
 [lang='zh-HK'],
 article strong:lang(zh),
 article strong:lang(zh-Hant) {
-  font-family: 'Biaodian Pro Sans CNS', "Helvetica Neue", Helvetica, Arial, "Zhuyin Heiti", "Han Heiti", sans-serif;
+  font-family: 'Biaodian Pro Sans', "Helvetica Neue", Helvetica, Arial, "Zhuyin Heiti", "Han Heiti", sans-serif;
 }
 html:lang(zh).no-unicoderange,
 html:lang(zh-Hant).no-unicoderange,
@@ -1358,7 +1358,7 @@ article blockquote i:lang(zh),
 article blockquote var:lang(zh),
 article blockquote i:lang(zh-Hant),
 article blockquote var:lang(zh-Hant) {
-  font-family: 'Biaodian Pro Sans CNS', "Latin Italic Sans", "Helvetica Neue", Helvetica, Arial, "Zhuyin Heiti", "Han Heiti", sans-serif;
+  font-family: 'Biaodian Pro Sans', "Latin Italic Sans", "Helvetica Neue", Helvetica, Arial, "Zhuyin Heiti", "Han Heiti", sans-serif;
 }
 .no-unicoderange article blockquote i:lang(zh),
 .no-unicoderange article blockquote var:lang(zh),
@@ -1402,7 +1402,7 @@ article figure blockquote *:not(:lang(zh)):not(:lang(ja)) {
 }
 article figure blockquote:lang(zh),
 article figure blockquote:lang(zh-Hant) {
-  font-family: 'Biaodian Pro Serif CNS', "Numeral LF Serif", Georgia, "Times New Roman", "Zhuyin Kaiti", "Han Songti", serif;
+  font-family: 'Biaodian Pro Serif', "Numeral LF Serif", Georgia, "Times New Roman", "Zhuyin Kaiti", "Han Songti", serif;
 }
 .no-unicoderange article figure blockquote:lang(zh),
 .no-unicoderange article figure blockquote:lang(zh-Hant) {
@@ -1432,7 +1432,7 @@ article blockquote *:not(:lang(zh)):not(:lang(ja)) {
 }
 article blockquote:lang(zh),
 article blockquote:lang(zh-Hant) {
-  font-family: 'Biaodian Pro Serif CNS', "Numeral LF Serif", Georgia, "Times New Roman", "Zhuyin Kaiti", "Han Kaiti", cursive, serif;
+  font-family: 'Biaodian Pro Serif', "Numeral LF Serif", Georgia, "Times New Roman", "Zhuyin Kaiti", "Han Kaiti", cursive, serif;
 }
 .no-unicoderange article blockquote:lang(zh),
 .no-unicoderange article blockquote:lang(zh-Hant) {
@@ -1470,7 +1470,7 @@ i:lang(zh),
 var:lang(zh),
 i:lang(zh-Hant),
 var:lang(zh-Hant) {
-  font-family: 'Biaodian Pro Serif CNS', "Numeral LF Italic Serif", "Latin Italic Serif", Georgia, "Times New Roman", "Zhuyin Kaiti", "Han Kaiti", cursive, serif;
+  font-family: 'Biaodian Pro Serif', "Numeral LF Italic Serif", "Latin Italic Serif", Georgia, "Times New Roman", "Zhuyin Kaiti", "Han Kaiti", cursive, serif;
 }
 .no-unicoderange i:lang(zh),
 .no-unicoderange var:lang(zh),
@@ -1532,7 +1532,7 @@ code:lang(zh-Hant),
 kbd:lang(zh-Hant),
 samp:lang(zh-Hant),
 pre:lang(zh-Hant) {
-  font-family: 'Biaodian Pro Sans CNS', Menlo, Consolas, Courier, "Zhuyin Heiti", "Han Heiti", monospace, monospace, sans-serif;
+  font-family: 'Biaodian Pro Sans', Menlo, Consolas, Courier, "Zhuyin Heiti", "Han Heiti", monospace, monospace, sans-serif;
 }
 .no-unicoderange code:lang(zh),
 .no-unicoderange kbd:lang(zh),
@@ -1800,17 +1800,26 @@ pre h-hws[hidden] {
   font-family: 'Han Space';
   unicode-range: U+20;
 }
+h-hangable:lang(zh-Hant),
+h-hangable:lang(zh-TW),
+h-hangable:lang(zh-HK),
 h-hangable:lang(zh-Hans),
 h-hangable:lang(zh-CN),
 h-hangable:lang(ja) {
   position: relative;
   display: inline;
 }
+h-hangable:lang(zh-Hant) h-char.biaodian.close h-cs,
+h-hangable:lang(zh-TW) h-char.biaodian.close h-cs,
+h-hangable:lang(zh-HK) h-char.biaodian.close h-cs,
 h-hangable:lang(zh-Hans) h-char.biaodian.close h-cs,
 h-hangable:lang(zh-CN) h-char.biaodian.close h-cs,
 h-hangable:lang(ja) h-char.biaodian.close h-cs {
   display: none;
 }
+h-hangable:lang(zh-Hant) > h-cs,
+h-hangable:lang(zh-TW) > h-cs,
+h-hangable:lang(zh-HK) > h-cs,
 h-hangable:lang(zh-Hans) > h-cs,
 h-hangable:lang(zh-CN) > h-cs,
 h-hangable:lang(ja) > h-cs {
@@ -1819,9 +1828,15 @@ h-hangable:lang(ja) > h-cs {
   visibility: visible;
   font: inherit;
 }
+h-hangable:lang(zh-Hant) > h-cs h-inner,
+h-hangable:lang(zh-TW) > h-cs h-inner,
+h-hangable:lang(zh-HK) > h-cs h-inner,
 h-hangable:lang(zh-Hans) > h-cs h-inner,
 h-hangable:lang(zh-CN) > h-cs h-inner,
 h-hangable:lang(ja) > h-cs h-inner,
+h-hangable:lang(zh-Hant) > h-cs h-inner[hidden],
+h-hangable:lang(zh-TW) > h-cs h-inner[hidden],
+h-hangable:lang(zh-HK) > h-cs h-inner[hidden],
 h-hangable:lang(zh-Hans) > h-cs h-inner[hidden],
 h-hangable:lang(zh-CN) > h-cs h-inner[hidden],
 h-hangable:lang(ja) > h-cs h-inner[hidden] {
@@ -1829,6 +1844,9 @@ h-hangable:lang(ja) > h-cs h-inner[hidden] {
   visibility: hidden;
   font: 1em "Han Space", Menlo, Consolas, Courier;
 }
+h-hangable:lang(zh-Hant) > h-cs:after,
+h-hangable:lang(zh-TW) > h-cs:after,
+h-hangable:lang(zh-HK) > h-cs:after,
 h-hangable:lang(zh-Hans) > h-cs:after,
 h-hangable:lang(zh-CN) > h-cs:after,
 h-hangable:lang(ja) > h-cs:after {
@@ -1847,14 +1865,23 @@ h-hangable:lang(ja) > h-cs:after {
   content: attr(biaodian);
   line-height: 1.05;
 }
+ruby h-hangable:lang(zh-Hant) > h-cs:after,
+ruby h-hangable:lang(zh-TW) > h-cs:after,
+ruby h-hangable:lang(zh-HK) > h-cs:after,
 ruby h-hangable:lang(zh-Hans) > h-cs:after,
 ruby h-hangable:lang(zh-CN) > h-cs:after,
 ruby h-hangable:lang(ja) > h-cs:after,
+h-ru h-hangable:lang(zh-Hant) > h-cs:after,
+h-ru h-hangable:lang(zh-TW) > h-cs:after,
+h-ru h-hangable:lang(zh-HK) > h-cs:after,
 h-ru h-hangable:lang(zh-Hans) > h-cs:after,
 h-ru h-hangable:lang(zh-CN) > h-cs:after,
 h-ru h-hangable:lang(ja) > h-cs:after {
   position: relative;
 }
+h-hangable:lang(zh-Hant) h-char.biaodian.end:not(.close),
+h-hangable:lang(zh-TW) h-char.biaodian.end:not(.close),
+h-hangable:lang(zh-HK) h-char.biaodian.end:not(.close),
 h-hangable:lang(zh-Hans) h-char.biaodian.end:not(.close),
 h-hangable:lang(zh-CN) h-char.biaodian.end:not(.close),
 h-hangable:lang(ja) h-char.biaodian.end:not(.close) {
@@ -1862,6 +1889,9 @@ h-hangable:lang(ja) h-char.biaodian.end:not(.close) {
   color: transparent;
   font: 0/0 hidden-text;
 }
+.pseudo-element-clipboard h-hangable:lang(zh-Hant) h-char.biaodian.end:not(.close),
+.pseudo-element-clipboard h-hangable:lang(zh-TW) h-char.biaodian.end:not(.close),
+.pseudo-element-clipboard h-hangable:lang(zh-HK) h-char.biaodian.end:not(.close),
 .pseudo-element-clipboard h-hangable:lang(zh-Hans) h-char.biaodian.end:not(.close),
 .pseudo-element-clipboard h-hangable:lang(zh-CN) h-char.biaodian.end:not(.close),
 .pseudo-element-clipboard h-hangable:lang(ja) h-char.biaodian.end:not(.close) {
@@ -2087,26 +2117,11 @@ h-char[display-as].comb-liga:after {
   margin-right: 0;
   margin-bottom: -0.25em;
 }
-#wrap article h-hangable:lang(zh) {
-  position: relative;
-  display: inline;
-}
-#wrap article h-hangable:lang(zh) h-char.biaodian.close h-cs {
+#wrap article h-hangable:lang(zh) > h-cs:after {
+  content: none;
   display: none;
 }
-#wrap article h-hangable:lang(zh) > h-cs {
-  position: relative;
-  display: inline !important;
-  visibility: visible;
-  font: inherit;
-}
-#wrap article h-hangable:lang(zh) > h-cs h-inner,
-#wrap article h-hangable:lang(zh) > h-cs h-inner[hidden] {
-  display: inline;
-  visibility: hidden;
-  font: 1em 'Han Space', Menlo, Consolas, Courier;
-}
-#wrap article h-hangable:lang(zh) > h-cs:after {
+#wrap article h-hangable:lang(zh) > h-cs h-real {
   -moz-text-emphasis: none;
   -webkit-text-emphasis: none;
   text-emphasis: none;
@@ -2117,20 +2132,11 @@ h-char[display-as].comb-liga:after {
   text-indent: 0;
   position: absolute;
   top: 0;
-  right: 0;
+  left: auto;
   content: attr(biaodian);
   line-height: inherit;
 }
-ruby #wrap article h-hangable:lang(zh),
-h-ru #wrap article h-hangable:lang(zh) {
-  position: relative;
-}
 #wrap article h-hangable:lang(zh) h-char.biaodian.end:not(.close) {
-  position: absolute;
-  color: transparent;
-  font: 0/0 hidden-text;
-}
-.pseudo-element-clipboard #wrap article h-hangable:lang(zh) h-char.biaodian.end:not(.close) {
   display: none;
 }
 #wrap {
@@ -2143,4 +2149,14 @@ h-ru #wrap article h-hangable:lang(zh) {
   -ms-writing-mode: tb-rl;
   -webkit-writing-mode: vertical-rl;
   writing-mode: tb-rl;
+  -ms-text-combine-horizontal: digits 2;
+  -webkit-text-combine-horizontal: digits 2;
+  text-combine-horizontal: digits 2;
+}
+#wrap article h-char[unicode='ff1a'] {
+  direction: rtl;
+  -ms-writing-mode: rl-tb;
+  -webkit-writing-mode: horizontal-tb;
+  writing-mode: rl-tb;
+  margin: -0.25em 0;
 }

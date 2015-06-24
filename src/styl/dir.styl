@@ -110,35 +110,18 @@ $vern-dir
       margin-bottom: -.25em
 
   h-hangable:lang(zh)
-    position: relative
-    display: inline
-
-    h-char.biaodian.close h-cs
-      display: none
-    > h-cs
-      position: relative
-      display: inline !important
-      visibility: visible
-      font: inherit
-    > h-cs h-inner,
-    > h-cs h-inner[hidden]
-      display: inline
-      visibility: hidden
-      font: 1em 'Han Space', $han-mono
     > h-cs:after
+      content none
+      display none
+    > h-cs h-real
       han-typo-reset()
       position absolute
       top 0
-      right 0
+      left auto
+      //- Absolute positioning issue in vertical writing mode in Webkit/Blink
+      //- right 0
       content attr( biaodian )
       line-height inherit
-    ruby &,
-    h-ru &
-        position: relative
     h-char.biaodian.end:not(.close)
-      position: absolute
-      color: transparent
-      font: 0/0 hidden-text
-    .pseudo-element-clipboard & h-char.biaodian.end:not(.close)
       display: none
 

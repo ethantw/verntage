@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/ethantw/verntage",
   "dependencies": {
-    "han-css": "^3.2.3"
+    "han-css": "^3.2.5"
   },
   "devDependencies": {
     "babelify": "^6.0.2",

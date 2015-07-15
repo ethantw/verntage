@@ -15,7 +15,6 @@ Han.fn.putRealBd = function() {
     cs.innerHTML += `<h-real>${ bd }</h-real>`
   })
 
-  this.hangable = hangable
   return this
 }
 
@@ -27,28 +26,26 @@ Han.fn.fixVernHanging = function() {
   .forEach(( hangable ) => {
     const outer  = qs( ':scope > h-cs', hangable )
     const inner  = qs( 'h-inner', outer )
-    const real   = qs( 'h-real', outer )
+    const real   = qs( 'h-real',  outer )
 
     const outerH = outer.offsetHeight
     const innerH = inner.offsetHeight
     const outerW = outer.offsetWidth
     const innerW = inner.offsetWidth
     const realW  = real.offsetWidth
-    const realL  = real.style.lineHeight
 
     if ( innerH !== outerH || ( innerH === 0 && outerH === 0 )) {
       if ( !hangable.matches( ':last-child' )) {
         real.style.marginRight = -( outerW - innerW ) + 'px' 
-        //real.style.marginRight = -( outerW - realW/2 ) + 'px' 
       }
     }
   })
-  }, 1000 )
+  }, 500 )
   return this 
 }
 
 Han.fn.routine.push( 'putRealBd', 'fixVernHanging' )
-let inst = Han( document.body ).render()
+let hinst = Han( document.body ).render()
 
 /*
 const doesSupport = Han.support.writingmode
